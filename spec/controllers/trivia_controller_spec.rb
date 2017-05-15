@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe WelcomeController, :type => :controller do
+RSpec.describe TriviaController, :type => :controller do
   describe "GET #index" do
     it "responds successfully with an HTTP 200 status code" do
       get :index
@@ -13,11 +13,4 @@ RSpec.describe WelcomeController, :type => :controller do
       expect(response).to render_template("index")
     end
   end
-    # it "loads all of the posts into @posts" do
-    #   post1, post2 = Post.create!, Post.create!
-    #   get :index
-    #
-    #   expect(assigns(:posts)).to match_array([post1, post2])
-    # end
-  #end
 end
