@@ -29,7 +29,7 @@ RSpec.describe TriviaController, type: :controller do
   # Trivium. As you add validations to Trivium, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    :question => "Question 1", :answer => "Answer 1"
   }
 
   let(:invalid_attributes) {
