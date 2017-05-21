@@ -4,19 +4,19 @@ RSpec.describe "trivia/index", type: :view do
   before(:each) do
     assign(:trivia, [
       Trivium.create!(
-        :question => "Question",
-        :answer => "Answer"
+        :question => "Am I a question?",
+        :answer => "Yes."
       ),
       Trivium.create!(
-        :question => "Question",
-        :answer => "Answer"
+        :question => "Am I a question?",
+        :answer => "Yes."
       )
     ])
   end
 
   it "renders a list of trivia" do
     render
-    assert_select "div.row>div.col-sm-6", :text => "Question".to_s, :count => 2
-    assert_select "div.row>div.col-sm-6", :text => "Answer".to_s, :count => 2
+    assert_select "div.row>div.col-sm-6", :text => "Am I a question?".to_s, :count => 2
+    assert_select "div.row>div.col-sm-6", :text => "Yes.".to_s, :count => 2
   end
 end

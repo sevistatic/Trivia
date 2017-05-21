@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "trivia/edit", type: :view do
   before(:each) do
     @trivium = assign(:trivium, Trivium.create!(
-      :question => "MyString",
-      :answer => "MyString"
+      :question => "Am I a question?",
+      :answer => "Yes."
     ))
   end
 

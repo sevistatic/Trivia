@@ -28,9 +28,7 @@ RSpec.describe TriviaController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Trivium. As you add validations to Trivium, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    :question => "Question 1", :answer => "Answer 1"
-  }
+  let(:valid_attributes) { {:question => "Am I a question?", :answer => "Yes."}}
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
