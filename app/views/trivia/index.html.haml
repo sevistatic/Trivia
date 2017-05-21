@@ -1,10 +1,18 @@
 .site-background
   .container
     .center-frame
-      %h1 Trivia
-      %p Would you like to try your hand at trivia? Take our quiz below.
-      = link_to "Take quiz", trivia_questions_path, class: "btn btn-default"
-      %p How about making a question of your own?
-      = link_to "Create new question", trivia_new_path, class: "btn btn-default"
-      %p Or you can view the high scores.
-      = link_to "View high scores", trivia_high_scores_path, class: "btn btn-default"
+      %h1 Listing trivia
+      .row
+        .col-sm-6
+          Question
+        .col-sm-6
+          Answer
+      - @trivia.each do |trivium|
+        .row
+          .col-sm-6
+            =trivium.question
+          .col-sm-6
+            =trivium.answer
+      .row
+        .col-sm-12.center
+          =link_to 'Create a new question', new_trivium_path, class: "btn btn-default btn-custom"

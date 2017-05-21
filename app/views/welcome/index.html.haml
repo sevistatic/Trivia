@@ -4,32 +4,23 @@
       %h1 Welcome to Trivia Club
       %p.paragraph As a Trivia Club member, you can try your hand at any or all of our user-created trivia questions. You can also rate questions or create your own.
       %hr
-      %p.paragraph To begin, you must become a Trivia Club member by creating an account.
-      .row
-        .col.col-sm-12.center
-          = link_to "Create a Trivia Club account", new_account_path, class: "btn btn-default btn-custom"
-      %p.paragraph Already a member? Log in below.
-      .row
-        = form_tag log_in_path, :method => :post do
-          .col.col-sm-5
-            .form-input.row
-              .col.col-sm-4
-                = label_tag "Username"
-              .col.col-sm-6
-                = text_field_tag "Username", ""
-              .col.col-sm-2.center
-                %i.icon-ok-sign.success
-            .form-input.row
-              .col.col-sm-4
-                = label_tag "Password"
-              .col.col-sm-6
-                = text_field_tag "Password", ""
-              .col.col-sm-2.center
-                %i.icon-remove-sign.err
-            .col-sm-12.center
-              = submit_tag "Submit", class: "btn btn-default btn-custom", id: "submit"
-          .col.col-sm-2
-            %p.paragraph.center or
-          .col.col-sm-5.center
-            = link_to "Log in with Facebook", facebook_log_in_path, class: "btn btn-default"
-      = link_to "Go straight to trivia", trivia_path, class: "btn btn-default"
+      - unless user_signed_in?
+        %p.paragraph To begin, you must become a Trivia Club member by creating an account.
+        .row
+          .col.col-sm-12.center
+            = link_to "Create a Trivia Club account", new_user_registration_path, class: "btn btn-default btn-custom"
+        %p.paragraph Already a member? Log in below.
+        .row
+          .col.col-sm-12.center
+            = link_to "Log in", new_user_session_path, class: "btn btn-default"
+      - else
+        .row
+          .col.col-sm-6.center
+            %p See how good you are. Take our quiz.
+            = link_to "Take quiz", trivia_path, class: "btn btn-default"
+          .col.col-sm-6.center
+            %p How about making a question of your own?
+            = link_to "Create new question", new_trivium_path, class: "btn btn-default"
+        .row.center
+          %hr
+          =button_to "Log out", destroy_user_session_path, :method => :delete, class: "btn btn-default btn-custom"
