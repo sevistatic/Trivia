@@ -5,5 +5,8 @@ Rails.application.routes.draw do
   get '/trivia/high_scores', to: 'trivia#high_scores'
   get '/trivia', to: 'trivia#index'
   post '/trivia', to: 'trivia#submit'
+  get '/accounts/new', to: 'accounts#new', as: 'new_account'
+  get '/accounts/log_in', to: 'accounts#log_in', as: 'log_in'
+  get '/accounts/facebook_log_in', to: 'accounts#facebook_log_in', as: 'facebook_log_in'
   root 'welcome#index'
 end

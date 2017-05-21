@@ -1,2 +1,18 @@
-%h1 Hello, Spencer
-= link_to 'trivia', trivia_path
+.site-background
+  .center-frame
+    %h1 Welcome to Trivia Club
+    %p.paragraph As a Trivia Club member, you can try your hand at any or all of our user-created trivia questions. You can also rate questions or create your own.
+    %hr
+    %p.paragraph To begin, you must become a Trivia Club member by creating an account.
+    = link_to "Create a Trivia Club account", new_account_path, class: "btn btn-default btn-custom"
+    %p.paragraph Already a member? Log in below.
+    = form_tag log_in_path, :method => :post do
+      .form-input
+        = label_tag "Username"
+        = text_field_tag "Username", ""
+        %span.glyphicons.glyphicons-ok
+      .form-input
+        = label_tag "Password"
+        = text_field_tag "Password", ""
+      = submit_tag "Submit", class: "login"
+    = link_to "Log in with Facebook", facebook_log_in_path, class: "btn btn-default btn-custom"

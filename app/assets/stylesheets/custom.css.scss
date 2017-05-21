@@ -1,0 +1,42 @@
+$font-stack:    Optima, sans-serif;
+$primary-color: #333;
+$pale-blue: #bff;
+$medium-blue: #5edbe9;
+$button-color: #f7bc90;
+
+.site-background {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $pale-blue;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.center-frame {
+  background-color: $medium-blue;
+  max-width: 600px;
+  padding: 10px;
+  min-height: 500px;
+  border-radius: 20px;
+  margin: 0 auto;
+  h1 {
+    text-align: center;
+    color: #e96c5e;
+  }
+
+  .btn-custom {
+    min-width: 100px;
+  }
+
+  p.paragraph {
+    margin-top: 5px;
+    font-size: 18px;
+  }
+
+  .form-input {
+    width: 250px;
+    label {
+      width: 80px;
+    }
+  }
+}

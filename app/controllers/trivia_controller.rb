@@ -1,4 +1,4 @@
-class TriviaController < ActionController::Base
+class TriviaController < ApplicationController
   protect_from_forgery with: :exception
   def index
   end
@@ -9,5 +9,5 @@ class TriviaController < ActionController::Base
   end
 
   def high_scores
-  end
+  end 
 end

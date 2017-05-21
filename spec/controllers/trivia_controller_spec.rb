@@ -14,10 +14,11 @@ RSpec.describe TriviaController, :type => :controller do
     end
   end
 
-  describe "POST #index" do
-    it "redirects to the high score list" do
-      post :submit, params: {triviaQuestion: "TEST"}
-      expect(response).to redirect_to trivia_high_scores_path
+  describe "POST #submit" do
+    it "responds successfully with an HTTP 200 status code" do
+      get :high_scores
+      expect(response).to be_success
+      expect(response).to have_http_status(200)
     end
   end
 
@@ -26,6 +27,10 @@ RSpec.describe TriviaController, :type => :controller do
       get :high_scores
       expect(response).to be_success
       expect(response).to have_http_status(200)
+    end
+    it "renders the high_scores template" do
+      get :high_scores
+      expect(response).to render_template("high_scores")
     end
   end
 end
