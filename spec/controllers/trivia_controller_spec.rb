@@ -30,8 +30,7 @@ RSpec.describe TriviaController, type: :controller do
   # adjust the attributes here as well.
   let(:valid_attributes) { {:question => "Am I a question?", :answer => "Yes."}}
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+  let(:invalid_attributes) {{:question => "Am question?", :answer => "No."}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -95,14 +94,15 @@ RSpec.describe TriviaController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {:question => "Am I a question now?", :answer => "Yes. Even now."}
       }
 
       it "updates the requested trivium" do
         trivium = Trivium.create! valid_attributes
         put :update, params: {id: trivium.to_param, trivium: new_attributes}, session: valid_session
         trivium.reload
-        skip("Add assertions for updated state")
+        expect(trivium.question).to eq "Am I a question now?"
+        expect(trivium.answer).to eq "Yes. Even now."
       end
 
       it "redirects to the trivium" do
