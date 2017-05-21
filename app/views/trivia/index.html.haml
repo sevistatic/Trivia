@@ -1,4 +1,7 @@
-%h1 Trivia Questions
-= form_tag trivia_path, :method => :post do
-  = text_field_tag "triviaQuestion", ""
-  = submit_tag "Submit"
+.site-background
+  .container
+    .center-frame
+      %h1 Trivia Questions
+      = form_tag trivia_path, :method => :post do
+        = text_field_tag "triviaQuestion", ""
+        = submit_tag "Submit"

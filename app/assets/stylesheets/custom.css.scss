@@ -23,20 +23,59 @@ $button-color: #f7bc90;
     text-align: center;
     color: #e96c5e;
   }
+  #create-account {
+    text-align: center;
+  }
+
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .col {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 
   .btn-custom {
-    min-width: 100px;
+    width: auto;
+    margin: 0 auto;
+    &#submit{
+      margin: 5px;
+    }
   }
 
   p.paragraph {
     margin-top: 5px;
     font-size: 18px;
   }
-
+  .container {
+    text-align: center;
+    width: 100%;
+  }
   .form-input {
-    width: 250px;
-    label {
-      width: 80px;
+    width: 100%;
+    text-align: left;
+    input {
+      width: 100%;
     }
   }
+  .login {
+    // max-width: auto;
+  }
+  .test {
+    text-align: center;
+    margin: 2px;
+    background: #888;
+    color: #fff;
+  }
+  .center {
+    text-align: center;
+  }
+}
+
+.icon-ok-sign.success {
+  color: green;
+}
+.icon-remove-sign.err {
+  color: red;
 }
