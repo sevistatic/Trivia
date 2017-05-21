@@ -1,7 +1,10 @@
 .site-background
   .container
     .center-frame
-      %h1 Trivia Questions
-      = form_tag trivia_path, :method => :post do
-        = text_field_tag "triviaQuestion", ""
-        = submit_tag "Submit"
+      %h1 Trivia
+      %p Would you like to try your hand at trivia? Take our quiz below.
+      = link_to "Take quiz", trivia_questions_path, class: "btn btn-default"
+      %p How about making a question of your own?
+      = link_to "Create new question", trivia_new_path, class: "btn btn-default"
+      %p Or you can view the high scores.
+      = link_to "View high scores", trivia_high_scores_path, class: "btn btn-default"

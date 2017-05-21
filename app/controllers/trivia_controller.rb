@@ -9,5 +9,8 @@ class TriviaController < ApplicationController
   end
 
   def high_scores
-  end 
+  end
+
+  def questions
+  end
 end

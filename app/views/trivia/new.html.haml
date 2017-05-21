@@ -1,0 +1,13 @@
+.site-background
+  .container
+    .center-frame
+      %h1 Create a new question
+      = form_tag trivia_path, :method => :post do
+        .row
+          .col-sm-6
+            = label_tag "What is your question?"
+            = text_field_tag "triviaQuestion", ""
+          .col-sm-6
+            = label_tag "What is the answer?"
+            = text_field_tag "triviaAnswer", ""
+        = submit_tag "Submit"
