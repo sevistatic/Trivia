@@ -1,0 +1,19 @@
+%p.paragraph="There have been #{@trivia.count} questions submitted to this site. Can you answer them all?"
+.row
+  .col-sm-6
+    Trivia Question
+  .col-sm-6
+    Trivia Answer
+=form_tag trivia_submit_path do
+  - @trivia.each do |trivium|
+    .row
+      .col-sm-6
+        =trivium.question
+      .col-sm-6
+        =label_tag "Answer:"
+        %input{ :type => "text", :name => "answer" }
+  =button_to "Submit Answers", id: "answer_submit"
+
+.row
+  .col-sm-12.center
+    =link_to 'Create a new question', new_trivium_path, class: "btn btn-default btn-custom"

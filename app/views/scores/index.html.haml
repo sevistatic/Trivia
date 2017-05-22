@@ -1,0 +1,16 @@
+%p.paragraph View Scores
+
+%table
+  %thead
+    %tr
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @scores.each do |score|
+      %tr
+        %td= score.user
+
+%br
