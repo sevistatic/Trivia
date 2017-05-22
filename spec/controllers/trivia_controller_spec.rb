@@ -52,12 +52,14 @@ RSpec.describe TriviaController, type: :controller do
     let(:question_1) {double("question_1", question: "Am I a question?", answer: "Yes.")}
     let(:question_2) {double("question_2", question: "Am I also a question?", answer: "Also yes.")}
     let(:trivia) {[question_1, question_2]}
+  end
 
+  describe "POST #submit" do
+    let(:user) {double('user', email: "email@test.com")}
     it "creates a new instance of score" do
-      # allow(request.env['warden']).to receive(:authenticate!).and_return(user)
-      allow(Trivium).to receive(:all).and_return trivia
+      allow(controller).to receive(:current_user).and_return(user)
       expect(Score).to receive(:create).with(user: user.email)
-      get :index, params: {}, session: valid_session
+      post :submit, params: {}, session: valid_session
     end
   end
 

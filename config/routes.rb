@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
+  resources :scores
   resources :trivia
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/welcome', to: 'welcome#index'
   get '/trivia', to: 'trivia#index'
-  post '/trivia', to: 'trivia#submit'
+  post '/trivia/submit', to: 'trivia#submit'
   get '/trivia/questions', to: 'trivia#questions'
-  get '/trivia/high_scores', to: 'trivia#high_scores'
   get '/trivia/new', to: 'trivia#new'
 
 

@@ -15,9 +15,9 @@ RSpec.describe "trivia/index", type: :view do
     assign(:score, Score.create!(:user => "example@test.com"))
   end
 
-  it "renders a list of trivia" do
+  it "renders a list of trivia questions" do
     render
     assert_select "div.row>div.col-sm-6", :text => "Am I a question?".to_s, :count => 2
-    assert_select "div.row>div.col-sm-6", :text => "Yes.".to_s, :count => 2
+    assert_select "div.row>div.col-sm-6>input", :count => 2
   end
 end
