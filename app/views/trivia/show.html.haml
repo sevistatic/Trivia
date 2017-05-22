@@ -1,15 +1,12 @@
-.site-background
-  .container
-    .center-frame
-      %p#notice= notice
+%p#notice= notice
 
-      %p
-        %b Question:
-        = @trivium.question
-      %p
-        %b Answer:
-        = @trivium.answer
+%p
+  %b Question:
+  = @trivium.question
+%p
+  %b Answer:
+  = @trivium.answer
 
-      = link_to 'Edit', edit_trivium_path(@trivium)
-      \|
-      = link_to 'Back', root_path
+= link_to 'Edit', edit_trivium_path(@trivium)
+\|
+= link_to 'Back', root_path

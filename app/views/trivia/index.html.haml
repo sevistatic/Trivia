@@ -1,18 +1,15 @@
-.site-background
-  .container
-    .center-frame
-      %h1 Listing trivia
-      .row
-        .col-sm-6
-          Trivia Question
-        .col-sm-6
-          Trivia Answer
-      - @trivia.each do |trivium|
-        .row
-          .col-sm-6
-            =trivium.question
-          .col-sm-6
-            =trivium.answer
-      .row
-        .col-sm-12.center
-          =link_to 'Create a new question', new_trivium_path, class: "btn btn-default btn-custom"
+%h1 Listing trivia
+.row
+  .col-sm-6
+    Trivia Question
+  .col-sm-6
+    Trivia Answer
+- @trivia.each do |trivium|
+  .row
+    .col-sm-6
+      =trivium.question
+    .col-sm-6
+      =trivium.answer
+.row
+  .col-sm-12.center
+    =link_to 'Create a new question', new_trivium_path, class: "btn btn-default btn-custom"

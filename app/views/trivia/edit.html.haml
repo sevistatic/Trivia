@@ -1,9 +1,6 @@
-.site-background
-  .container
-    .center-frame
-      %h1 Editing trivia question
-      = render 'form'
+%h1 Editing trivia question
+= render 'form'
 
-      = link_to 'Show', @trivium
-      \|
-      = link_to 'Back', trivia_path
+= link_to 'Show', @trivium
+\|
+= link_to 'Back', trivia_path
