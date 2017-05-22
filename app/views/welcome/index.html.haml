@@ -14,6 +14,11 @@
           .col.col-sm-12.center
             = link_to "Log in", new_user_session_path, class: "btn btn-default"
       - else
+        %p.center
+          %span Welcome! You are logged in as
+          %span{style: "text-decoration: underline;"} #{current_user.email}
+          %span=" | "
+          =link_to "Log out", destroy_user_session_path, :method => :delete
         .row
           .col.col-sm-6.center
             %p See how good you are. Take our quiz.
@@ -21,6 +26,3 @@
           .col.col-sm-6.center
             %p How about making a question of your own?
             = link_to "Create new question", new_trivium_path, class: "btn btn-default"
-        .row.center
-          %hr
-          =button_to "Log out", destroy_user_session_path, :method => :delete, class: "btn btn-default btn-custom"
