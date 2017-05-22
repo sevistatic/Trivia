@@ -5,6 +5,9 @@ class TriviaController < ApplicationController
   # GET /trivia.json
   def index
     @trivia = Trivium.all
+    print("current_user----->#{current_user}\n")
+    print("email----->#{current_user.email}\n")
+    @score = Score.create(user: current_user.email)
   end
 
   # GET /trivia/1

@@ -1,15 +1,19 @@
-%h1 Listing trivia
+%p.paragraph There have been ___ questions submitted to this site. Can you answer them all?
 .row
   .col-sm-6
     Trivia Question
   .col-sm-6
     Trivia Answer
-- @trivia.each do |trivium|
-  .row
-    .col-sm-6
-      =trivium.question
-    .col-sm-6
-      =trivium.answer
+=form_for @score do |f|
+  - @trivia.each do |trivium|
+    .row
+      .col-sm-6
+        =trivium.question
+      .col-sm-6
+        = f.label "Answer:"
+        = f.text_field :answer
+    =trivium.answer
+    = f.submit
 .row
   .col-sm-12.center
     =link_to 'Create a new question', new_trivium_path, class: "btn btn-default btn-custom"

@@ -12,6 +12,7 @@ RSpec.describe "trivia/index", type: :view do
         :answer => "Yes."
       )
     ])
+    assign(:score, Score.create!(:user => "example@test.com"))
   end
 
   it "renders a list of trivia" do

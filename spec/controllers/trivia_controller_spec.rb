@@ -39,10 +39,25 @@ RSpec.describe TriviaController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
+    let(:user) {double('user', email: "email@test.com")}
+    before :each do
+      allow(controller).to receive(:current_user).and_return(user)
+    end
     it "returns a success response" do
       trivium = Trivium.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
+    end
+
+    let(:question_1) {double("question_1", question: "Am I a question?", answer: "Yes.")}
+    let(:question_2) {double("question_2", question: "Am I also a question?", answer: "Also yes.")}
+    let(:trivia) {[question_1, question_2]}
+
+    it "creates a new instance of score" do
+      # allow(request.env['warden']).to receive(:authenticate!).and_return(user)
+      allow(Trivium).to receive(:all).and_return trivia
+      expect(Score).to receive(:create).with(user: user.email)
+      get :index, params: {}, session: valid_session
     end
   end
 
